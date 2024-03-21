@@ -1,0 +1,930 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --size-seat-1: 5%;
+    --size-seat-2: 5%;
+    --size-seat-3: 5%;
+    --size-seat-4: 5%;
+    --size-seat-5: 5%;
+    --size-seat-6: 5%;
+    --size-bottom-1: 5%;
+    --size-bottom-2: 5%;
+    --size-bottom-3: 5%;
+    --size-bottom-4: 5%;
+    --size-bottom-5: 5%;
+    --size-bottom-6: 5%;
+    --margin-side: 7px;
+    --side-pos-6: 13%;
+    --side-pos-5: 10.5%;
+    --side-pos-4: 7.5%;
+    --side-pos-3: 5%;
+    --side-pos-2: 2.5%;
+    --side-pos-1: 0.5%;
+}
+
+@media screen and (max-width: 1450px) {
+    :root {
+        --size-seat-1: 4.5%;
+        --size-seat-2: 4.5%;
+        --size-seat-3: 4.5%;
+        --size-seat-4: 4.5%;
+        --size-seat-5: 4.5%;
+        --size-seat-6: 4.5%;
+
+        --size-bottom-1: 2%;
+        --size-bottom-2: 2%;
+        --size-bottom-3: 2%;
+        --size-bottom-4: 2%;
+        --size-bottom-5: 2%;
+        --size-bottom-6: 2%;
+        /* --margin-side: 8px; */
+    }
+    body {
+        font-size: 8px;
+    }
+}
+
+/* @media screen and (max-width: 1450px) {
+    :root {
+        --size-seat-1: 4%;
+        --size-seat-2: 4%;
+        --size-seat-3: 4%;
+        --size-seat-4: 4%;
+        --size-seat-5: 4%;
+        --size-seat-6: 4%;
+    }
+} */
+body {
+    height: 100vh;
+    padding: 0rem 2rem;
+    counter-reset: section;
+}
+
+.stade {
+    background: #000;
+    height: 100%;
+    border-radius: 27px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    padding: 1rem;
+}
+
+.contour {
+    background-color: green;
+    height: 55vh;
+    width: 60vw;
+    padding: 2rem;
+    border-radius: 10px;
+    position: relative;
+}
+
+.container {
+    position: relative;
+}
+
+p {
+    position: absolute;
+    color: white;
+    top: 0.5rem;
+    right: 3rem;
+}
+
+.pelouse {
+    border: 2px solid white;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    background-color: green;
+    position: relative;
+    overflow: hidden;
+}
+
+.pelouse div:nth-child(odd) {
+    flex: 1;
+    height: 100%;
+    background-color: rgb(75, 149, 46);
+}
+
+.pelouse div:nth-child(even) {
+    flex: 1;
+    height: 100%;
+    background-color: rgb(39, 82, 39);
+}
+
+.cone {
+    position: absolute;
+    border: 1px solid white;
+    background-color: transparent !important;
+    width: 40px !important;
+    height: 40px !important;
+}
+
+.one {
+    bottom: -1px;
+    left: -1px;
+    border-radius: 0 100% 0 0;
+}
+
+.two {
+    top: -1px;
+    left: -1px;
+    border-radius: 0 0 100% 0;
+}
+
+.three {
+    top: -1px;
+    right: -1px;
+    border-radius: 0 0 0 100%;
+}
+
+.four {
+    border-radius: 100% 0 0 0;
+    bottom: -1px;
+    right: -1px;
+}
+
+.surface1 {
+    width: 2rem !important;
+    height: 6rem !important;
+    border: 1px solid white;
+    background-color: transparent !important;
+    position: absolute;
+    top: calc(50% - 3rem);
+    left: -1px;
+    z-index: 2;
+}
+
+.surface2 {
+    width: 2rem !important;
+    height: 6rem !important;
+    border: 1px solid white;
+    position: absolute;
+    top: calc(50% - 3rem);
+    right: -1px;
+    z-index: 2;
+}
+
+.camp1 {
+    background: transparent !important;
+    width: 5rem !important;
+    height: 10rem !important;
+    border: 1px solid white;
+    background: #000;
+    position: absolute;
+    top: calc(50% - 5rem);
+    z-index: 1;
+    left: -1px;
+}
+
+.camp2 {
+    width: 5rem !important;
+    height: 10rem !important;
+    border: 1px solid white;
+    background: transparent !important;
+    position: absolute;
+    top: calc(50% - 5rem);
+    right: -1px;
+    z-index: 1;
+}
+
+.cercle1 {
+    position: absolute;
+    width: 2rem !important;
+    height: 3rem !important;
+    background-color: transparent !important;
+    border-right: 2px solid white;
+
+    border-radius: 0 50% 50% 0;
+    top: calc(50% - 1.5rem);
+    left: 4rem;
+    z-index: 0;
+}
+
+.cercle2 {
+    position: absolute;
+    width: 0.5rem !important;
+    height: 0.5rem !important;
+    background-color: white !important;
+    border: 1px solid white;
+    border-radius: 50%;
+    top: calc(50% - 0.25rem);
+    right: 2.5rem;
+    z-index: 3;
+}
+
+.cercle3 {
+    position: absolute;
+    width: 0.5rem !important;
+    height: 0.5rem !important;
+    background-color: white !important;
+    border: 1px solid white;
+    border-radius: 50%;
+    top: calc(50% - 0.25rem);
+    left: 2.5rem;
+    z-index: 3;
+}
+
+.cercle4 {
+    position: absolute;
+    width: 2rem !important;
+    height: 3rem !important;
+    background-color: transparent !important;
+    border-left: 2px solid white;
+    border-radius: 50% 0 0 50%;
+    top: calc(50% - 1.5rem);
+    right: 4rem;
+}
+
+.neuf {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.neuf div {
+    width: 1px !important;
+    height: 100% !important;
+    background-color: white !important;
+}
+
+.neuf .cercle1 {
+    width: 5rem !important;
+    height: 5rem !important;
+    border-radius: 50%;
+    background-color: transparent !important;
+    border: 1px solid white;
+    position: absolute;
+    top: calc(50% - 2.5rem);
+    left: calc(50% - 2.5rem);
+}
+
+.neuf .cercle2 {
+    width: 0.5rem !important;
+    height: 0.5rem !important;
+    border-radius: 50%;
+    background-color: white !important;
+    border: 1px solid white;
+    position: absolute;
+    top: calc(50% - 0.25rem);
+    left: calc(50% - 0.25rem);
+}
+
+.siege1 {
+    position: absolute;
+    top: 0.25rem;
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    width: 90%;
+}
+
+.siege1 div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: green;
+    width: var(--size-seat-1);
+    border-radius: 11px 11px 1px 1px;
+    margin: 0 4px;
+}
+
+.siege1 div::before {
+    counter-increment: section;
+    content: counter(section);
+}
+
+.siege2 div::before {
+    counter-increment: section;
+    content: counter(section);
+}
+.siege3 div::before {
+    counter-increment: section;
+    content: counter(section);
+}
+.siege4 div::before {
+    counter-increment: section;
+    content: counter(section);
+}
+.siege5 div::before {
+    counter-increment: section;
+    content: counter(section);
+}
+.siege6 div::before {
+    counter-increment: section;
+    content: counter(section);
+}
+
+.siege2 {
+    position: absolute;
+    top: 1.7rem;
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    width: 85%;
+}
+
+.siege2 div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: green;
+    border-radius: 11px 11px 1px 1px;
+    width: var(--size-seat-2);
+    margin: 4px;
+}
+
+.siege3 {
+    position: absolute;
+    top: 3rem;
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    width: 80%;
+}
+
+.siege3 div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: yellow;
+    width: var(--size-seat-3);
+    margin: 4px;
+    border-radius: 11px 11px 1px 1px;
+}
+
+.siege4 {
+    position: absolute;
+    top: 4.3rem;
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    width: 75%;
+}
+
+.siege4 div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: yellow;
+    margin: 4px;
+    width: var(--size-seat-4);
+    border-radius: 11px 11px 1px 1px;
+}
+
+.siege5 {
+    position: absolute;
+    top: 5.7rem;
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    width: 70%;
+}
+
+.siege5 div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: red;
+    margin: 4px;
+    width: var(--size-seat-5);
+    border-radius: 11px 11px 1px 1px;
+}
+
+.siege6 {
+    position: absolute;
+    top: 7rem;
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    width: 65%;
+}
+
+.siege6 div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: red;
+    margin: 4px;
+    width: var(--size-seat-6);
+    border-radius: 11px 11px 1px 1px;
+}
+
+.bas1 {
+    position: absolute;
+    bottom: 0rem;
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    width: 90%;
+}
+
+.bas1 div::before {
+    counter-increment: section;
+    content: counter(section);
+}
+
+.bas2 div::before {
+    counter-increment: section;
+    content: counter(section);
+}
+.bas3 div::before {
+    counter-increment: section;
+    content: counter(section);
+}
+.bas4 div::before {
+    counter-increment: section;
+    content: counter(section);
+}
+.bas5 div::before {
+    counter-increment: section;
+    content: counter(section);
+}
+.bas6 div::before {
+    counter-increment: section;
+    content: counter(section);
+}
+
+.bas1 div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: green;
+    width: var(--size-seat-1);
+    border-radius: 0 0 12px 12px;
+    margin: 0 4px;
+}
+
+.bas2 {
+    position: absolute;
+    bottom: 1.7rem;
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    width: 85%;
+}
+
+.bas2 div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: green;
+    border-radius: 0 0 12px 12px;
+    margin: 4px;
+    width: var(--size-seat-2);
+}
+
+.bas3 {
+    position: absolute;
+    bottom: 3.2rem;
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    width: 80%;
+}
+
+.bas3 div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: yellow;
+    border-radius: 0 0 12px 12px;
+    margin: 4px;
+    width: var(--size-seat-3);
+}
+
+.bas4 {
+    position: absolute;
+    bottom: 4.6rem;
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    width: 75%;
+}
+
+.bas4 div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: yellow;
+    border-radius: 0 0 12px 12px;
+    margin: 4px;
+    width: var(--size-seat-4);
+}
+
+.bas5 {
+    position: absolute;
+    bottom: 6rem;
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    width: 70%;
+}
+
+.bas5 div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: red;
+    border-radius: 0 0 12px 12px;
+    width: var(--size-seat-5);
+    margin: 4px;
+}
+
+.bas6 {
+    position: absolute;
+    bottom: 7.5rem;
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    width: 65%;
+}
+
+.bas6 div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: red;
+    margin: 4px;
+    border-radius: 0 0 12px 12px;
+    width: var(--size-seat-6);
+}
+
+.left1 {
+    position: absolute;
+    left: var(--side-pos-1);
+    flex-direction: column;
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    height: 90%;
+}
+
+.left1 div::before {
+    counter-increment: section;
+    content: counter(section);
+}
+.left2 div::before {
+    counter-increment: section;
+    content: counter(section);
+}
+.left3 div::before {
+    counter-increment: section;
+    content: counter(section);
+}
+.left4 div::before {
+    counter-increment: section;
+    content: counter(section);
+}
+.left5 div::before {
+    counter-increment: section;
+    content: counter(section);
+}
+.left6 div::before {
+    counter-increment: section;
+    content: counter(section);
+}
+
+.left1 div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: green;
+    border-radius: 11px 11px 1px 1px;
+    transform: rotate(-90deg);
+    margin: var(--margin-side);
+    height: var(--size-bottom-1);
+}
+
+.left2 {
+    position: absolute;
+    left: var(--side-pos-2);
+    flex-direction: column;
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    height: 90%;
+}
+
+.left2 div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: green;
+    border-radius: 11px 11px 1px 1px;
+    transform: rotate(-90deg);
+    margin: var(--margin-side);
+    height: var(--size-bottom-2);
+}
+
+.left3 {
+    position: absolute;
+    left: var(--side-pos-3);
+    flex-direction: column;
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    height: 85%;
+}
+
+.left3 div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: yellow;
+    border-radius: 11px 11px 1px 1px;
+    transform: rotate(-90deg);
+    margin: var(--margin-side);
+    height: var(--size-bottom-3);
+}
+
+.left4 {
+    position: absolute;
+    left: var(--side-pos-4);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-self: center;
+    height: 80%;
+}
+
+.left4 div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: yellow;
+    margin: var(--margin-side);
+    height: var(--size-bottom-4);
+    border-radius: 11px 11px 1px 1px;
+    transform: rotate(-90deg);
+}
+
+.left5 {
+    position: absolute;
+    left: var(--side-pos-5);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-self: center;
+    height: 75%;
+}
+
+.left5 div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: red;
+    margin: var(--margin-side);
+    height: var(--size-bottom-5);
+    border-radius: 11px 11px 1px 1px;
+    transform: rotate(-90deg);
+}
+
+.left6 {
+    position: absolute;
+    left: var(--side-pos-6);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-self: center;
+    height: 65%;
+}
+
+.left6 div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: red;
+    height: var(--size-bottom-6);
+    border-radius: 11px 11px 1px 1px;
+    margin: var(--margin-side);
+    transform: rotate(-90deg);
+}
+
+.right1 {
+    position: absolute;
+    right: var(--side-pos-1);
+    flex-direction: column;
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    height: 95%;
+}
+
+.right1 div::before {
+    counter-increment: section;
+    content: counter(section);
+}
+.right2 div::before {
+    counter-increment: section;
+    content: counter(section);
+}
+.right3 div::before {
+    counter-increment: section;
+    content: counter(section);
+}
+.right4 div::before {
+    counter-increment: section;
+    content: counter(section);
+}
+.right5 div::before {
+    counter-increment: section;
+    content: counter(section);
+}
+.right6 div::before {
+    counter-increment: section;
+    content: counter(section);
+}
+
+.right1 div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: green;
+    height: var(--size-bottom-1);
+    border-radius: 11px 11px 1px 1px;
+    transform: rotate(90deg);
+    margin: var(--margin-side);
+}
+
+.right2 {
+    position: absolute;
+    right: var(--side-pos-2);
+    flex-direction: column;
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    height: 90%;
+}
+
+.right2 div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    border-radius: 11px 11px 1px 1px;
+    margin: var(--margin-side);
+    transform: rotate(90deg);
+    background: green;
+    height: var(--size-bottom-2);
+}
+
+.right3 {
+    position: absolute;
+    right: var(--side-pos-3);
+    flex-direction: column;
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    height: 85%;
+}
+
+.right3 div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin: var(--margin-side);
+    border-radius: 11px 11px 1px 1px;
+
+    transform: rotate(90deg);
+    background: yellow;
+    height: var(--size-bottom-3);
+}
+
+.right4 {
+    position: absolute;
+    right: var(--side-pos-4);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-self: center;
+    height: 80%;
+}
+
+.right4 div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: yellow;
+    margin: var(--margin-side);
+    border-radius: 11px 11px 1px 1px;
+
+    transform: rotate(90deg);
+    height: var(--size-bottom-4);
+}
+
+.right5 {
+    position: absolute;
+    right: var(--side-pos-5);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-self: center;
+    height: 75%;
+}
+
+.right5 div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: red;
+    margin: var(--margin-side);
+    border-radius: 11px 11px 1px 1px;
+
+    transform: rotate(90deg);
+    height: var(--size-bottom-5);
+}
+
+.right6 {
+    position: absolute;
+    right: var(--side-pos-6);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-self: center;
+    height: 70%;
+}
+
+.right6 div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: red;
+    margin: var(--margin-side);
+    border-radius: 11px 11px 1px 1px;
+
+    transform: rotate(90deg);
+    height: var(--size-bottom-6);
+}
+
+.ball1 {
+    width: 20px;
+    height: 20px;
+    left: 53%;
+    border-radius: 50%;
+    bottom: 4px;
+    background: url('./soccer-ball-02.png');
+    background-size: 180%;
+    background-position: center;
+    background-color: white;
+    position: absolute;
+    overflow: hidden;
+    box-shadow: -24px 17px 45px 6px aliceblue;
+}
+
+.ball2 {
+    width: 20px;
+    height: 20px;
+    left: 49%;
+    border-radius: 50%;
+    bottom: 4px;
+    background: url('./soccer-ball-02.png');
+    background-position: center;
+    background-size: 180%;
+    position: absolute;
+    /* box-shadow: -10px 20px 30px 6px aliceblue; */
+}
+
+.ball3 {
+    width: 20px;
+    height: 20px;
+    left: 45%;
+    border-radius: 50%;
+    bottom: 8px;
+    background: url('./soccer-ball-02.png');
+    background-position: center;
+    background-size: 180%;
+    position: absolute;
+    box-shadow: 24px 17px 45px 6px aliceblue;
+}
